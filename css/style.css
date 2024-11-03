@@ -1,0 +1,103 @@
+:root {
+  --mint: #adebb3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 1000px;
+  height: 600px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.items {
+  margin: 2em;
+  padding: 2em;
+  border: 2px solid black;
+}
+.items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+  padding-left: 20px;
+  text-align: left;
+  list-style: none;
+  background-color: var(--light);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 2em;
+  background-color: #fff;
+}
+.controls input {
+  margin: 0.5em 2em 2em;
+}
+.controls-extra {
+  padding: 1em;
+}
+.controls-btns {
+  display: flex;
+  justify-content: space-evenly;
+}
+.controls-btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--mint);
+  cursor: pointer;
+}
+
+.summary {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2em;
+}
+.summary-calculate {
+  margin-bottom: 2em;
+  padding: 1em 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--mint);
+  cursor: pointer;
+}
+
+.add-menu {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80vh;
+  height: 80vh;
+  color: #333;
+  background-color: #fff;
+}
+
+.add-menu-visible {
+  display: flex;
+}/*# sourceMappingURL=style.css.map */
