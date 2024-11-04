@@ -18,10 +18,13 @@ body {
 }
 
 .wrapper {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	width: 1000px;
+	width: 90vw;
+	min-width: 350px;
+	padding: 0.2em;
 }
 
 h1 {
@@ -72,46 +75,27 @@ h1 {
 	}
 }
 
-.controls {
-	display: flex;
-	justify-content: space-evenly;
-	flex-direction: column;
-	padding: 2em;
-	background-color: #fff;
-
-	& input {
-		margin: 0.5em 2em 2em;
-	}
-
-	&-extra {
-		padding: 1em;
-	}
-
-	&-btns {
-		display: flex;
-		justify-content: space-evenly;
-	}
-
-	&-btn {
-		padding: 10px 22px;
-		border: none;
-		border-radius: 8px;
-		background-color: var(--mint);
-		cursor: pointer;
-	}
-}
-
 .summary {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	padding: 2em;
 
-	&-calculate {
-		margin-bottom: 2em;
-		padding: 1em 1em;
+	& input {
+		padding: 1em 0.5em;
+	}
+
+	&-buttons {
+		display: flex;
+		justify-content: center;
+	}
+
+	& button {
+		margin: 0.5em 1em 2em;
+		padding: 1em 2em;
 		border: none;
 		border-radius: 8px;
+		font-size: 1rem;
 		background-color: var(--mint);
 		cursor: pointer;
 	}
@@ -123,26 +107,33 @@ h1 {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	width: 80vh;
-	height: 80vh;
+	top: 0;
+	left: 0;
+	margin: auto;
+	padding: 2em;
+	min-width: 100vw;
+	min-height: 100vh;
+	overflow-y: scroll;
 	color: #333;
 	background-color: #fff;
 
-	& label {
-		margin-bottom: 1em;
-		font-size: 2rem;
-	}
+	& li {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		margin: 2em;
+		text-align: center;
+		list-style: none;
 
-	& select {
-		margin-bottom: 2em;
-		padding: 1em 2em;
-		font-size: 1.5rem;
+		& hr {
+			width: 100%;
+		}
 	}
 
 	&-button {
 		padding: 1em 2em;
-		font-size: 1.5rem;
-
+		font-size: 1rem;
 		border: none;
 		border-radius: 8px;
 		cursor: pointer;

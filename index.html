@@ -13,21 +13,38 @@
     <div class="wrapper">
         <h1>Pizzo-obliczator</h1>
         <div class="info">
-            <p class="last-item">Ostatnio dodano:</p>
+            <p>Ostatnio dodano:</p>
+            <p class="last item">Pizza</p>
+            <p>cofnij</p>
         </div>
         <div class="panel">
 
         </div>
+
         <div class="summary">
-            <button class="summary-calculate">Oblicz</button>
+            <div class="extra">
+                <label for="extra">Inne (zł):</label>
+                <input id="extra" type="number" placeholder="Inne">
+                <button class="extra-btn">Dodaj</button>
+            </div>
+            <div class="delivery">
+                <label for="delivery">🚚 Dostawa (km x 3zł) - wpisz kilometry:</label>
+                <input id="delivery" type="number" placeholder="Dostawa (km)">
+                <button class="delivery-btn">Dodaj</button>
+            </div>
+            <div class="summary-buttons">
+                <button class="summary-calculate">Podsumowanie</button>
+                <button class="summary-clear">Wyczyść</button>
+            </div>
         </div>
-    </div>
 
-    <div class="popup-list">
-        <ul>
-
-        </ul>
-        <button class="pupup-list-button">Gotowe</button>
+        <div class="popup-list">
+            <ul>
+    
+            </ul>
+            <p class="popup-list-result">Wynosi</p>
+            <button class="popup-list-button">Gotowe</button>
+        </div>
     </div>
 
     <script src="./js/script.js"></script>
