@@ -22,7 +22,6 @@ body {
 	flex-direction: column;
 	justify-content: flex-start;
 	width: 1000px;
-
 }
 
 h1 {
@@ -30,21 +29,22 @@ h1 {
 	font-size: 2rem;
 }
 
-.panel{
+.panel {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: repeat(13 ,1fr);
+	grid-template-rows: repeat(13, 1fr);
 	gap: 10px 20px;
 	grid-auto-flow: column;
 	padding: 0.5em;
 
-	&-item{
+	&-item {
 		padding: 0.5em 1em;
 		border-radius: 8px;
 		text-align: center;
 		background-color: #fff;
+		border: none;
 		cursor: pointer;
-		transition: background-color .3s;
+		transition: background-color 0.3s;
 
 		&:hover {
 			background-color: var(--mint);
@@ -66,7 +66,7 @@ h1 {
 		text-align: left;
 		list-style: none;
 
-		& hr{
+		& hr {
 			width: 100%;
 		}
 	}
@@ -97,18 +97,18 @@ h1 {
 		border: none;
 		border-radius: 8px;
 		background-color: var(--mint);
-        cursor: pointer;
+		cursor: pointer;
 	}
 }
 
 .summary {
 	display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 2em;
+	justify-content: center;
+	flex-direction: column;
+	padding: 2em;
 
 	&-calculate {
-        margin-bottom: 2em;
+		margin-bottom: 2em;
 		padding: 1em 1em;
 		border: none;
 		border-radius: 8px;
@@ -117,29 +117,29 @@ h1 {
 	}
 }
 
-.popup-list{
-    position: absolute;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 80vh;
-    height: 80vh;
-    color: #333;
-    background-color: #fff;
+.popup-list {
+	position: absolute;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 80vh;
+	height: 80vh;
+	color: #333;
+	background-color: #fff;
 
 	& label {
 		margin-bottom: 1em;
 		font-size: 2rem;
 	}
 
-	& select{
+	& select {
 		margin-bottom: 2em;
 		padding: 1em 2em;
 		font-size: 1.5rem;
 	}
 
-	&-button{
+	&-button {
 		padding: 1em 2em;
 		font-size: 1.5rem;
 
@@ -148,7 +148,7 @@ h1 {
 		cursor: pointer;
 	}
 
-	&-visible{
+	&-visible {
 		display: flex;
 	}
 }

@@ -38,7 +38,7 @@ const menu = [
 const pizzasPanel = document.querySelector('.panel');
 
 menu.forEach(pizza => {
-	const newPizza = document.createElement('div');
+	const newPizza = document.createElement('button');
 	newPizza.classList.add('panel-item');
 	newPizza.textContent = `${pizza.name}`;
 	newPizza.setAttribute('data-price', `${pizza.price}`)
