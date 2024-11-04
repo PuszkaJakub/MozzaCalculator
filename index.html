@@ -12,44 +12,22 @@
 <body>
     <div class="wrapper">
         <h1>Pizzo-obliczator</h1>
-        <div class="controls">
-            <p>Dostawa</p>
-            <input type="number" placeholder="Liczba kilometrów" class="asa">
-            <div class="controls-btns">
-                <button class="controls-btn controls-btn__add">Dodaj</button>
-                <button class="controls-btn controls-btn__clear">Wyczyść</button>
-
-            </div>
+        <div class="info">
+            <p class="last-item">Ostatnio dodano:</p>
         </div>
-        <div class="items">
-            <ul class="items-list">
+        <div class="panel">
 
-            </ul>
         </div>
         <div class="summary">
             <button class="summary-calculate">Oblicz</button>
-            <p class="summary-result">Zamówienie wynosi <span class="amount"></span></p>
         </div>
     </div>
 
-    <div class="add-menu">
-        <label for="products-selection">Wybierz produkt:</label>
-        <select name="Wybierz produkt" id="products-selection">
-            <option value="null" disabled>-- Wege --</option>
-            <option value="Pizza Margheritta 33pln">Pizza Margheritta</option>
-            <option value="Pizza Mozza 37pln">Pizza Mozza</option>
-            <option value="Pizza Grilled Garden 40pln">Pizza Grilled Garden</option>
-            <option value="Pizza Pesto 40pln">Pizza Pesto</option>
-            <option value="Pizza Popey 40pln">Pizza Popey</option>
-            <option value="Pizza Quattro Fromaggi 41pln">Pizza Quattro Fromaggi</option>
-            <option value="Pizza Greco 41pln">Pizza Greco</option>
-            <option value="Pizza Sweet Balsamico 41pln">Pizza Sweet Balsamico</option>
-            <option value="null" disabled>-- Troche mięska --</option>
-            <option value="Pizza Sweet Balsamico 41pln">Pizza Sweet Balsamico</option>
-            <option value="Pizza Sweet Balsamico 41pln">Pizza Sweet Balsamico</option>
-            <option value="Pizza Sweet Balsamico 41pln">Pizza Sweet Balsamico</option>
-        </select>
-        <button class="add-menu-button">Dodaj</button>
+    <div class="popup-list">
+        <ul>
+
+        </ul>
+        <button class="pupup-list-button">Gotowe</button>
     </div>
 
     <script src="./js/script.js"></script>

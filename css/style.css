@@ -22,12 +22,31 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   width: 1000px;
-  height: 600px;
 }
 
 h1 {
   text-align: center;
   font-size: 2rem;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(13, 1fr);
+  gap: 10px 20px;
+  grid-auto-flow: column;
+  padding: 0.5em;
+}
+.panel-item {
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.panel-item:hover {
+  background-color: var(--mint);
 }
 
 .items {
@@ -37,13 +56,15 @@ h1 {
 }
 .items li {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin: 15px;
-  padding-left: 20px;
+  flex-direction: column;
+  margin: 2em;
   text-align: left;
   list-style: none;
-  background-color: var(--light);
+}
+.items li hr {
+  width: 100%;
 }
 
 .controls {
@@ -86,7 +107,7 @@ h1 {
   cursor: pointer;
 }
 
-.add-menu {
+.popup-list {
   position: absolute;
   display: none;
   justify-content: center;
@@ -97,7 +118,22 @@ h1 {
   color: #333;
   background-color: #fff;
 }
-
-.add-menu-visible {
+.popup-list label {
+  margin-bottom: 1em;
+  font-size: 2rem;
+}
+.popup-list select {
+  margin-bottom: 2em;
+  padding: 1em 2em;
+  font-size: 1.5rem;
+}
+.popup-list-button {
+  padding: 1em 2em;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.popup-list-visible {
   display: flex;
 }/*# sourceMappingURL=style.css.map */
