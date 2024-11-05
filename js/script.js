@@ -37,8 +37,6 @@ const menu = [
 ];
 
 const pizzasPanel = document.querySelector('.panel');
-const summaryBtn = document.querySelector('.summary-calculate');
-const clearBtn = document.querySelector('.summary-clear');
 
 const delivery = document.querySelector('#delivery');
 delivery.textContent = 'Dostawa';
@@ -47,10 +45,11 @@ extra.textContent = 'Inne';
 const deliveryBtn = document.querySelector('.delivery-btn');
 const extraBtn = document.querySelector('.extra-btn');
 
-const summaryPanel = document.querySelector('.popup-list');
+const summaryPanel = document.querySelector('.products-list');
 const productsList = document.querySelector('ul');
-const popupCloseBtn = document.querySelector('.popup-list-button');
-const popupResult = document.querySelector('.popup-list-result');
+const productsListResult = document.querySelector('.products-list-result');
+const clearBtn = document.querySelector('.products-list-button-clear');
+const productsNumber = document.querySelector('.products-list-counter')
 
 const addNewProduct = product => {
 	const newProduct = document.createElement('li');
@@ -61,26 +60,36 @@ const addNewProduct = product => {
 
 	const removeButton = document.createElement('button');
 	removeButton.textContent = 'Usuń';
-	removeButton.classList.add('popup-list-button');
-	removeButton.classList.add('popup-list-button-remove');
+	removeButton.classList.add('products-list-button');
+	removeButton.classList.add('products-list-button-remove');
 	removeButton.addEventListener('click', removeItem);
 
 	newProduct.appendChild(newProductPrice);
 	newProduct.appendChild(removeButton);
 	productsList.appendChild(newProduct);
-	alert('Dodano nowy element do listy')
-	summarize()
+	alert('Dodano nowy element do listy');
+	summarize();
 };
 
 const addDelivery = () => {
-	delivery.setAttribute('data-price', delivery.value * 3);
-	delivery.textContent = `Dostawa - (${delivery.value}km).`;
-	addNewProduct(delivery);
+	if (delivery.value !== '') {
+		delivery.setAttribute('data-price', (parseFloat(delivery.value) * 3.0).toFixed(2));
+		delivery.textContent = `Dostawa - (${delivery.value}km).`;
+		addNewProduct(delivery);
+		delivery.value = '';
+	} else {
+		alert('Podaj wartość');
+	}
 };
 
 const addExtra = () => {
-	extra.setAttribute('data-price', extra.value);
-	addNewProduct(extra);
+	if (extra.value !== '') {
+		extra.setAttribute('data-price', parseFloat(extra.value).toFixed(2));
+		addNewProduct(extra);
+		extra.value = '';
+	} else {
+		alert('Podaj wartość');
+	}
 };
 
 const removeItem = e => {
@@ -90,12 +99,13 @@ const removeItem = e => {
 
 const summarize = () => {
 	const allPrices = productsList.querySelectorAll('p');
-	console.log(allPrices);
 	let sum = 0;
 	for (price of allPrices) {
 		sum += parseFloat(price.textContent);
 	}
-	popupResult.textContent = `${sum} zł.`;
+	productsListResult.textContent = `${sum} zł.`;
+	productsNumber.textContent = `Ilość elementów: ${productsList.childElementCount}`;
+
 };
 
 // Load all the menu
@@ -112,20 +122,10 @@ menu.forEach(pizza => {
 	pizzasPanel.appendChild(newPizza);
 });
 
-
 // Add buttons functions
-summaryBtn.addEventListener('click', () => {
-	summaryPanel.classList.add('popup-list-visible');
-	summarize();
-});
-
-popupCloseBtn.addEventListener('click', () => {
-	summaryPanel.classList.remove('popup-list-visible');
-});
-
 clearBtn.addEventListener('click', () => {
-	productsList.innerHTML = ''
-	summarize()
+	productsList.innerHTML = '';
+	summarize();
 });
 
 deliveryBtn.addEventListener('click', addDelivery);

@@ -101,7 +101,7 @@ h1 {
   cursor: pointer;
 }
 
-.popup-list {
+.products-list {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,16 +111,16 @@ h1 {
   color: #333;
   background-color: #fff;
 }
-.popup-list p {
+.products-list p {
   display: block;
   font-size: 1.2rem;
   text-align: center;
 }
-.popup-list-result {
+.products-list-result {
   color: rgb(12, 64, 236);
   margin-bottom: 1em;
 }
-.popup-list li {
+.products-list li {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,19 +129,19 @@ h1 {
   text-align: center;
   list-style: none;
 }
-.popup-list li hr {
+.products-list li hr {
   width: 100%;
 }
-.popup-list-button {
+.products-list-button {
   padding: 1em 2em;
   font-size: 1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
 }
-.popup-list-button-remove {
+.products-list-button-remove {
   font-size: 0.7rem;
 }
-.popup-list-visible {
+.products-list-visible {
   display: flex;
 }/*# sourceMappingURL=style.css.map */
