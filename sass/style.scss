@@ -78,16 +78,25 @@ h1 {
 .summary {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	flex-direction: column;
 	padding: 2em;
 
-	& input {
-		padding: 1em 0.5em;
-	}
-
-	&-buttons {
+	&-extra, &-delivery{
 		display: flex;
 		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	& label{
+		text-align: center;
+	}
+
+
+	& input {
+		width: 12rem;
+		padding: 1em 0.5em;
 	}
 
 	& button {
@@ -102,20 +111,27 @@ h1 {
 }
 
 .popup-list {
-	position: absolute;
-	display: none;
+	// position: absolute;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	top: 0;
-	left: 0;
-	margin: auto;
+	margin: 2em;
 	padding: 2em;
-	min-width: 100vw;
-	min-height: 100vh;
-	overflow-y: scroll;
 	color: #333;
 	background-color: #fff;
+
+	p {
+		display: block;
+		font-size: 1.2rem;
+		text-align: center;
+		
+	}
+	
+	&-result{
+		color: rgb(12, 64, 236);
+		margin-bottom: 1em;
+	}
 
 	& li {
 		display: flex;
@@ -137,6 +153,10 @@ h1 {
 		border: none;
 		border-radius: 8px;
 		cursor: pointer;
+
+		&-remove{
+			font-size: 0.7rem;
+		}
 	}
 
 	&-visible {

@@ -57,16 +57,19 @@ const addNewProduct = product => {
 
 	newProduct.textContent = product.textContent;
 	const newProductPrice = document.createElement('p');
-	newProductPrice.textContent = `${product.getAttribute('data-price')}pln`;
+	newProductPrice.textContent = `${product.getAttribute('data-price')} zł`;
 
 	const removeButton = document.createElement('button');
 	removeButton.textContent = 'Usuń';
-	removeButton.classList.add('item-remove-button');
+	removeButton.classList.add('popup-list-button');
+	removeButton.classList.add('popup-list-button-remove');
 	removeButton.addEventListener('click', removeItem);
 
 	newProduct.appendChild(newProductPrice);
 	newProduct.appendChild(removeButton);
 	productsList.appendChild(newProduct);
+	alert('Dodano nowy element do listy')
+	summarize()
 };
 
 const addDelivery = () => {
@@ -92,7 +95,7 @@ const summarize = () => {
 	for (price of allPrices) {
 		sum += parseFloat(price.textContent);
 	}
-	popupResult.textContent = `Suma zamówienia wynosi ${sum} zł.`;
+	popupResult.textContent = `${sum} zł.`;
 };
 
 // Load all the menu
@@ -122,6 +125,7 @@ popupCloseBtn.addEventListener('click', () => {
 
 clearBtn.addEventListener('click', () => {
 	productsList.innerHTML = ''
+	summarize()
 });
 
 deliveryBtn.addEventListener('click', addDelivery);
